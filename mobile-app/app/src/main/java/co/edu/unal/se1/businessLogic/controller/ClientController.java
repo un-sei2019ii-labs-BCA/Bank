@@ -17,7 +17,6 @@ public class ClientController {
     }
 
 
-
     public boolean sendMoney(int sourceId, int targetId, int value, Context context) {
 
         clientRepository = new ClientRepository(context);
