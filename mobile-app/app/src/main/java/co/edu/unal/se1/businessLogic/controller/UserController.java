@@ -3,26 +3,25 @@ package co.edu.unal.se1.businessLogic.controller;
 import android.content.Context;
 
 import co.edu.unal.se1.dataAccess.model.User;
-import co.edu.unal.se1.dataAccess.repository.UserRepository;
+import co.edu.unal.se1.dataAccess.repository.AdminRepository;
 
 public class UserController {
 
-    private UserRepository userRepository;
+    private AdminRepository userRepository;
 
     public UserController() {
 
     }
 
     public void createUser(User user, Context context) {
-
-        userRepository = new UserRepository(context);
+        userRepository = new AdminRepository(context);
         userRepository.createUser(user);
         System.out.println("¡Usuario creado satisfactoriamente!");
     }
 
     public boolean sendMoney(int sourceId, int targetId, double value, Context context) {
 
-        userRepository = new UserRepository(context);
+        userRepository = new AdminRepository(context);
 
         final User sourceUser = userRepository.getUserById(sourceId);
         System.out.println("Source User - ID: " + sourceUser.getId() +

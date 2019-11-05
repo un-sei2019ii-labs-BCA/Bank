@@ -6,16 +6,21 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity
-public class User implements Serializable {
+public abstract class User implements Serializable {
 
     @PrimaryKey
     public int id;
 
-    @ColumnInfo(name = "name")
-    public String name;
+    @ColumnInfo(name = "username")
+    public String username;
 
-    @ColumnInfo(name = "balance")
-    public double balance;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public int getId() {
         return id;
@@ -25,19 +30,4 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 }
