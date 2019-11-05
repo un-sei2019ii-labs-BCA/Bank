@@ -28,4 +28,7 @@ public interface ClientDao {
 
     @Delete
     void deleteClient(Client client);
+
+    @Update
+    void updateClient(Client client);
 }

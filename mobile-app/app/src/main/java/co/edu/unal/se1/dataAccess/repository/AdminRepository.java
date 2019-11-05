@@ -22,11 +22,11 @@ public class AdminRepository {
         return database.adminDao().getAllClients();
     }
 
-    public Client getUserById(int id) {
+    public Client getClientById(int id) {
         return database.adminDao().getClientById(id);
     }
 
-    public void createUser(final Client client) {
+    public void createClient(final Client client) {
         database.adminDao().createClient(client);
     }
 

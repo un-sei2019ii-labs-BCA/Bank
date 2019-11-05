@@ -21,9 +21,17 @@ public class ClientRepository {
     public List<Transaction> getAllTransactions(){
         return database.clientDao().getAllTransactions();
     }
+    public Client getClientById(int id) {
+        return database.clientDao().getClientById(id);
+    }
+    public void updateClient(Client client) {
 
-    public String getClientInfo (int id){
+        database.clientDao().updateClient(client);
+    }
+    public String getClientInfo (int id) {
+
         return database.clientDao().getClientInfo(id);
+
     }
 
     public void updatePassword(String password, int id){
