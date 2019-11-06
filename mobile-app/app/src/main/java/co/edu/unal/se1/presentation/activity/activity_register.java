@@ -13,13 +13,13 @@ import com.google.android.material.textfield.TextInputEditText;
 import co.edu.unal.se1.R;
 import co.edu.unal.se1.dataAccess.model.User;
 
-public class mainActivityUser extends AppCompatActivity {
+public class activity_register extends AppCompatActivity {
     private UserController userController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_user);
+        setContentView(R.layout.activity_register);
 
         final TextInputEditText idInput = findViewById(R.id.id);
         final TextInputEditText nameInput = findViewById(R.id.name);
