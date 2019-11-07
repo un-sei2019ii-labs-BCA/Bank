@@ -12,6 +12,8 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import co.edu.unal.se1.R;
 import co.edu.unal.se1.dataAccess.model.User;
+import co.edu.unal.se1.businessLogic.controller.*;
+
 
 public class activity_register extends AppCompatActivity {
     private UserController userController;
