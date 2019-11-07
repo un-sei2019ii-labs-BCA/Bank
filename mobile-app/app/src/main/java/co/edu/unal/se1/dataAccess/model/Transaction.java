@@ -16,12 +16,12 @@ public class Transaction implements Serializable {
     @ForeignKey(entity = User.class,
             parentColumns   = "id",
             childColumns = "userId")
-    public User depositor;
+    public Client depositor;
 
     @ForeignKey(entity = User.class,
             parentColumns = "id",
             childColumns = "userId")
-    public User receiver;
+    public Client receiver;
 
     @ColumnInfo(name = "amount")
     public int amount;
@@ -53,11 +53,11 @@ public class Transaction implements Serializable {
         this.id = id;
     }
 
-    public void setDepositor(User depositor) {
+    public void setDepositor(Client depositor) {
         this.depositor = depositor;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(Client receiver) {
         this.receiver = receiver;
     }
 
