@@ -10,11 +10,13 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import co.edu.unal.se1.R;
-import co.edu.unal.se1.dataAccess.model.User;
+import co.edu.unal.se1.dataAccess.model.*;
+import co.edu.unal.se1.businessLogic.controller.AdminController;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private UserController userController;
+    private AdminController adminController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                User user = new User();
+                Client user = new Client();
                 user.setId(Integer.parseInt(idInput.getText().toString()));
                 user.setName(nameInput.getText().toString());
-                user.setBalance(Double.parseDouble(balanceInput.getText().toString()));
+                user.setBalance(Integer.parseInt(balanceInput.getText().toString()));
 
-                userController = new UserController();
-                userController.createUser(user, getApplicationContext());
+                adminController = new AdminController();
+                adminController.createUser(user, getApplicationContext());
             }
         });
 
@@ -49,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                userController = new UserController();
+                adminController = new AdminController();
 
                 int sourceId = Integer.parseInt(sourceIdInput.getText().toString());
                 int targetId = Integer.parseInt(targetIdInput.getText().toString());
-                double value = Double.parseDouble(valueInput.getText().toString());
+                int value = Integer.parseInt(valueInput.getText().toString());
 
-                boolean transaction = userController.sendMoney(sourceId, targetId, value, getApplicationContext());
+                boolean transaction = adminController.sendMoney(sourceId, targetId, value, getApplicationContext());
 
                 if (transaction) {
                     System.out.println("¡Transacción satisfactoria!");

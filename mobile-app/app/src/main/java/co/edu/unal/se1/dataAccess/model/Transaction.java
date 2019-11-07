@@ -14,7 +14,7 @@ public class Transaction implements Serializable {
     public int id;
 
     @ForeignKey(entity = User.class,
-            parentColumns = "id",
+            parentColumns   = "id",
             childColumns = "userId")
     public User depositor;
 
